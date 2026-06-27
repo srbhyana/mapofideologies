@@ -39,8 +39,8 @@
   .sub b{color:var(--paper);font-weight:500}
   .hero-note{font-size:12.5px;color:var(--paper-faint);border-left:2px solid var(--line-strong);padding-left:14px;max-width:34ch}
 
-  .sec{padding:40px 0 10px}
-  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:8px;flex-wrap:wrap}
+  .sec{padding:80px 0 16px}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:16px;flex-wrap:wrap}
   .sec-title{font-family:"Syne",sans-serif;font-weight:700;font-size:24px;letter-spacing:.01em}
   .yearbox{text-align:right}
   .yearbox .yr{font-family:"Syne",sans-serif;font-weight:800;font-size:46px;line-height:.9;color:var(--gold)}
@@ -74,7 +74,7 @@
   /* matrix */
   .mx-wrap{margin-top:18px;overflow-x:auto;border:1px solid var(--line)}
   table.mx{border-collapse:collapse;width:100%;min-width:780px}
-  table.mx th,table.mx td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:11px 10px;text-align:center}
+  table.mx th,table.mx td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:13px 12px;text-align:center}
   table.mx thead th{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper-dim);font-weight:500;vertical-align:bottom;background:var(--ink-3)}
   table.mx tbody th{text-align:left;font-family:"Syne",sans-serif;font-weight:700;font-size:13.5px;white-space:nowrap;color:var(--paper);position:sticky;left:0;background:var(--ink-2);border-right:1px solid var(--line-strong)}
   table.mx th:first-child{position:sticky;left:0;background:var(--ink-3);z-index:2}
@@ -143,10 +143,20 @@
 .tg{background:none;border:0;color:var(--paper-dim);font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:12px 26px;cursor:pointer;transition:.18s;-webkit-tap-highlight-color:transparent}
 .tg.active{background:var(--gold);color:var(--ink)}
 .tg:not(.active):hover{color:var(--paper)}
-.hero{display:block;text-align:center;max-width:760px;margin:0 auto;padding:46px 0 22px;grid-template-columns:none}
+.hero{display:block;text-align:center;max-width:720px;margin:0 auto;padding:60px 0 46px;grid-template-columns:none}
+.lede{margin:22px auto 0;max-width:60ch;font-family:"Inter",sans-serif;font-size:16px;line-height:1.62;color:var(--paper-dim)}
+.disc{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.disc>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:24px 2px;transition:.15s}
+.disc>summary::-webkit-details-marker{display:none}
+.disc>summary:hover .disc-t{color:var(--gold)}
+.disc .disc-t{font-family:"Syne",sans-serif;font-weight:700;font-size:20px;color:var(--paper);transition:.15s}
+.disc .disc-x{margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:22px;line-height:1;color:var(--gold);transition:transform .2s}
+.disc[open] .disc-x{transform:rotate(45deg)}
+.disc .disc-body{padding-bottom:16px;animation:discfade .3s ease}
+@keyframes discfade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .kicker{margin-bottom:18px}
 .hsub{margin-top:16px;font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.05em;color:var(--paper-dim)}
-.counts3{display:flex;justify-content:center;gap:46px;margin-top:32px;flex-wrap:wrap}
+.counts3{display:flex;justify-content:center;gap:54px;margin-top:44px;flex-wrap:wrap}
 .c3 .n{font-family:"Syne",sans-serif;font-weight:700;font-size:34px;color:var(--paper);line-height:1}
 .c3 .l{display:block;margin-top:7px;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--paper-dim)}
 .field-shell{position:relative;width:100%;aspect-ratio:16/10;background:radial-gradient(120% 120% at 50% 42%,rgba(30,38,52,.55) 0%,rgba(10,13,18,0) 62%),var(--ink-2);border:1px solid var(--line);margin-top:16px;overflow:hidden}
@@ -170,11 +180,11 @@
 .node:hover .lab,.node.active .lab{color:var(--paper)}
 .node.secondary:hover .dot{border-color:var(--gold);background:rgba(207,164,78,.25)}
 @keyframes pop{from{opacity:0;transform:translate(-50%,-50%) scale(.4)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
-.field-cap{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
-.field-cap p{font-size:12.5px;color:var(--paper-faint);max-width:48ch}
+.field-cap{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.field-cap p{font-size:12.5px;color:var(--paper-faint);max-width:48ch;line-height:1.65}
 .field-cap b{color:var(--paper-dim);font-weight:500}
 .spec{padding:48px 0 10px}
-.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 28px;margin-top:18px;border-top:1px solid var(--line)}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 28px;margin-top:26px;border-top:1px solid var(--line)}
 .spec-item{padding:10px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
 .spec-item .sn{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--gold);min-width:22px}
 .spec-item .st{font-size:13px;color:var(--paper-dim)}
@@ -266,6 +276,7 @@
 .cmp-chip .x{opacity:.65;margin-left:6px;font-weight:700}
 .cmp-chip.sel:hover .x{opacity:1}
 .credit{width:100%;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+footer.wrap{padding-top:56px;padding-bottom:10px}
 .credit-line{font-family:"Syne",sans-serif;font-weight:700;font-size:18px;color:var(--paper);margin-bottom:12px}
 .credit-line b{color:var(--gold);font-weight:800}
 .credit-links{display:flex;flex-wrap:wrap;gap:10px 22px}
@@ -294,9 +305,6 @@
 .bb-test:hover{border-color:var(--gold);color:var(--gold)}
 /* ---- fact bar interactive ---- */
 #factbar{cursor:pointer;position:relative}
-.fact-prog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:transparent;overflow:hidden}
-.fact-prog i{display:block;height:100%;width:0;background:var(--gold);opacity:.5}
-@keyframes factprog{from{width:0}to{width:100%}}
 .fact-cyc{color:var(--paper-faint);font-size:14px;flex:none;transition:.15s}
 #factbar:hover .fact-cyc{color:var(--gold)}
 #factbar:hover .fact-k{color:var(--gold-soft)}
@@ -321,7 +329,7 @@
 #testResult{max-width:900px;margin:28px auto 0}
 .res-wrap{display:flex;gap:34px;align-items:flex-start;flex-wrap:wrap}
 .tcard{width:340px;flex:none;margin:0 auto}
-.tcard-in{position:relative;border:1px solid var(--card-ac);border-top:4px solid var(--card-ac);background:var(--ink-2);padding:22px 22px 18px;overflow:hidden}
+.tcard-in{position:relative;border:1px solid var(--card-ac);border-top:4px solid var(--card-ac);background:var(--ink-2);padding:26px 24px 20px;overflow:hidden}
 .tcard-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .tcard-ovr{display:flex;flex-direction:column;align-items:center;line-height:1;flex:none}
 .ovr-num{font-family:"Syne",sans-serif;font-weight:800;font-size:34px;color:var(--card-ac)}
@@ -329,17 +337,17 @@
 .tcard-emblem{width:66px;height:66px;color:var(--card-ac);flex:none}
 .tcard-emblem svg{width:100%;height:100%}
 .tcard-code{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.16em;color:var(--paper-dim);flex:none}
-.tcard-name{font-family:"Syne",sans-serif;font-weight:800;font-size:26px;color:var(--paper);margin:16px 0 4px;line-height:1.08}
-.tcard-ess{font-size:13px;color:var(--paper-dim);margin-bottom:16px;line-height:1.45}
-.tcard-stats{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:14px}
+.tcard-name{font-family:"Syne",sans-serif;font-weight:800;font-size:26px;color:var(--paper);margin:18px 0 6px;line-height:1.1}
+.tcard-ess{font-size:13px;color:var(--paper-dim);margin-bottom:18px;line-height:1.5}
+.tcard-stats{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:16px}
 .tstat{display:grid;grid-template-columns:82px 26px 1fr;align-items:center;gap:9px}
 .tstat span{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.06em;color:var(--paper-faint)}
 .tstat em{font-family:"Syne",sans-serif;font-weight:800;font-size:14px;color:var(--paper);text-align:right;font-style:normal}
 .tstat i{height:6px;background:var(--ink-3);display:block;overflow:hidden}
 .tstat i u{display:block;height:100%;text-decoration:none}
-.tcard-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
-.tcard-cols p{font-size:11.5px;color:var(--paper-dim);line-height:1.55;margin:4px 0 0}
-.tcard-foot{margin-top:16px;font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.14em;color:var(--paper-faint)}
+.tcard-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
+.tcard-cols p{font-size:11.5px;color:var(--paper-dim);line-height:1.6;margin:5px 0 0}
+.tcard-foot{margin-top:18px;font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.14em;color:var(--paper-faint)}
 .res-side{flex:1;min-width:270px}
 .res-h{font-family:"Syne",sans-serif;font-weight:700;font-size:21px;color:var(--paper);margin:0 0 6px}
 .res-sly{border-left:2px solid var(--gold);padding:8px 0 8px 16px;color:var(--paper-dim);font-size:14px;line-height:1.5;margin:14px 0}
@@ -363,7 +371,7 @@
     <div class="mark">SAAHAS<b>.</b></div>
     <div class="mast-right">
       <button class="testcta" onclick="goMode('test')">&#9670; Where do you land</button>
-      <span class="micro" style="color:var(--gold)">v3.0</span>
+      <span class="micro" style="color:var(--gold)">v3.2</span>
     </div>
   </header>
   <hr class="rule" style="max-width:1240px;margin:0 auto">
@@ -384,15 +392,13 @@
       <span class="fact-n mono" id="factNum"></span>
       <span class="fact-cyc" aria-hidden="true">&#8635;</span>
     </div>
-    <div class="fact-prog"><i id="factProg"></i></div>
   </div>
 
   <div id="fieldMode">
     <main class="wrap">
       <section class="hero">
-        <div class="kicker micro">A field guide to political ideology</div>
         <h1 class="head">Every ideology,<br>on its own terms.</h1>
-        <p class="hsub">No side taken. Every claim checked.</p>
+        <p class="lede">No side taken, every claim checked. Understand each major ideology, take a 50-question test to find the one closest to you, then use it to help decide your next vote.</p>
         <div class="counts3">
           <div class="c3"><span class="n">20-40</span><span class="l">major families</span></div>
           <div class="c3"><span class="n">100-300</span><span class="l">recognized variants</span></div>
@@ -417,9 +423,13 @@
         </div>
       </section>
       <section class="spec">
-        <div class="sec-head"><div><div class="micro" style="margin-bottom:6px">Read a profile</div><h2 class="sec-title">The segment template</h2></div></div>
-        <p class="spec-note" style="margin-top:6px">Each point is one segment. A finished profile expands to the full spec below, sourced and confidence rated.</p>
-        <div class="spec-grid" id="spec"></div>
+        <details class="disc">
+          <summary><span class="micro">Read a profile</span><span class="disc-t">What every full profile covers</span><span class="disc-x" aria-hidden="true">+</span></summary>
+          <div class="disc-body">
+            <p class="spec-note">Each point on the map is one segment. A finished profile expands to all eighteen sections below, each one sourced and confidence rated.</p>
+            <div class="spec-grid" id="spec"></div>
+          </div>
+        </details>
       </section>
     </main>
   </div>
@@ -520,8 +530,7 @@
   </div>
 
   <footer class="wrap">
-    <span class="micro">SAAHAS · field guide and atlas · base</span>
-    <span class="micro" style="color:var(--paper-faint)">seeded · full fill is the next build</span>
+    <span class="micro">SAAHAS &middot; a field guide and atlas of political ideology</span>
     <div class="credit">
       <div class="credit-line">Made for fun and information by <b>Simran Raj Bhyana</b></div>
       <div class="credit-links">
@@ -1219,11 +1228,10 @@ const FACTS=[
 ];
 const factText=document.getElementById("factText"), factNum=document.getElementById("factNum");
 let _factOrder=[], _fp=0, _factTimer=null;
-function _factProg(){ const b=document.getElementById("factProg"); if(!b)return; b.style.animation="none"; void b.offsetWidth; b.style.animation="factprog 8.2s linear"; }
-function _factShow(){ if(!factText)return; const idx=_factOrder[_fp]; factText.style.opacity="0"; setTimeout(()=>{ factText.textContent=FACTS[idx]; if(factNum)factNum.textContent=String(idx+1).padStart(2,"0")+" / "+FACTS.length; factText.style.opacity="1"; _factProg(); },300); _fp=(_fp+1)%_factOrder.length; }
+function _factShow(){ if(!factText)return; const idx=_factOrder[_fp]; factText.style.opacity="0"; setTimeout(()=>{ factText.textContent=FACTS[idx]; if(factNum)factNum.textContent=String(idx+1).padStart(2,"0")+" / "+FACTS.length; factText.style.opacity="1"; },300); _fp=(_fp+1)%_factOrder.length; }
 function _factTime(){ clearInterval(_factTimer); _factTimer=setInterval(_factShow,8200); }
 function nextFact(){ _factShow(); _factTime(); }
-(function(){ if(!factText)return; _factOrder=FACTS.map((_,i)=>i); for(let i=_factOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[_factOrder[i],_factOrder[j]]=[_factOrder[j],_factOrder[i]];} _factShow(); _factTime(); const fb=document.getElementById("factbar"); if(fb){ fb.addEventListener("mouseenter",()=>{ clearInterval(_factTimer); const b=document.getElementById("factProg"); if(b)b.style.animationPlayState="paused"; }); fb.addEventListener("mouseleave",()=>{ _factTime(); const b=document.getElementById("factProg"); if(b)b.style.animationPlayState="running"; }); } })();
+(function(){ if(!factText)return; _factOrder=FACTS.map((_,i)=>i); for(let i=_factOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[_factOrder[i],_factOrder[j]]=[_factOrder[j],_factOrder[i]];} _factShow(); _factTime(); const fb=document.getElementById("factbar"); if(fb){ fb.addEventListener("mouseenter",()=>clearInterval(_factTimer)); fb.addEventListener("mouseleave",_factTime); } })();
 
 /* ===== roots / lineage ===== */
 const LINEAGE=[
