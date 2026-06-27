@@ -277,30 +277,114 @@
 .node:not(.minor):hover .dot,.node:not(.minor).active .dot{transform:scale(1.4);box-shadow:0 0 0 7px rgba(207,164,78,.16),0 0 20px rgba(207,164,78,.55)}
 .node.minor.show .dot{width:8px;height:8px}
 @media(max-width:600px){ .node:not(.minor) .dot{width:13px;height:13px} .node:not(.minor) .lab{font-size:11px} }
+/* ---- masthead + nav + bottom bar ---- */
+.mast-right{display:flex;align-items:center;gap:16px}
+.testcta{background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;padding:9px 14px;cursor:pointer;transition:.15s;white-space:nowrap}
+.testcta:hover{background:var(--gold);color:var(--ink)}
+.toggle{max-width:96vw;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tg{display:inline-flex;align-items:center;white-space:nowrap}
+.tg svg{margin-right:7px;vertical-align:-2px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.tg:hover{color:var(--gold);background:rgba(207,164,78,.07)}
+.tg.active,.tg.active:hover{color:var(--ink);background:var(--gold)}
+#botbar{position:sticky;bottom:0;z-index:30;display:flex;gap:12px;justify-content:center;align-items:center;padding:14px 18px 16px;background:linear-gradient(0deg,var(--ink) 62%,rgba(10,13,18,0));max-width:1240px;margin:0 auto}
+.bb-next{background:var(--gold);color:var(--ink);border:0;font-family:"Syne",sans-serif;font-weight:800;font-size:15px;letter-spacing:.01em;padding:14px 26px;cursor:pointer;transition:.15s}
+.bb-next:hover{filter:brightness(1.08)}
+.bb-ar{margin-left:6px}
+.bb-test{background:transparent;border:1px solid var(--line-strong);color:var(--paper-dim);font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:13px 18px;cursor:pointer;transition:.15s}
+.bb-test:hover{border-color:var(--gold);color:var(--gold)}
+/* ---- fact bar interactive ---- */
+#factbar{cursor:pointer;position:relative}
+.fact-prog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:transparent;overflow:hidden}
+.fact-prog i{display:block;height:100%;width:0;background:var(--gold);opacity:.5}
+@keyframes factprog{from{width:0}to{width:100%}}
+.fact-cyc{color:var(--paper-faint);font-size:14px;flex:none;transition:.15s}
+#factbar:hover .fact-cyc{color:var(--gold)}
+#factbar:hover .fact-k{color:var(--gold-soft)}
+/* ---- the test ---- */
+.t-start{margin-top:26px;background:var(--gold);color:var(--ink);border:0;font-family:"JetBrains Mono",monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:16px 32px;cursor:pointer;transition:.15s}
+.t-start:hover{filter:brightness(1.08)}
+.t-note{margin-top:14px;color:var(--paper-faint);font-size:12px}
+#testStage{max-width:760px;margin:30px auto 0}
+.q-bar{height:4px;background:var(--ink-3);border:1px solid var(--line);overflow:hidden}
+.q-fill{height:100%;width:0;background:var(--gold);transition:width .35s ease}
+.q-meta{display:flex;justify-content:space-between;margin:12px 2px 18px}
+.q-card{border:1px solid var(--line-strong);background:var(--ink-2);padding:34px 30px}
+.q-text{font-family:"Syne",sans-serif;font-weight:700;font-size:23px;line-height:1.32;color:var(--paper);margin:0 0 24px}
+.q-opts{display:flex;flex-direction:column;gap:12px}
+.q-opt{text-align:left;background:var(--ink-3);border:1px solid var(--line-strong);color:var(--paper-dim);font-family:"Inter",sans-serif;font-size:15px;line-height:1.4;padding:16px 18px;cursor:pointer;transition:.14s}
+.q-opt:hover{border-color:var(--gold);color:var(--paper);background:rgba(207,164,78,.07)}
+.q-opt.sel{border-color:var(--gold);color:var(--paper);box-shadow:inset 3px 0 0 var(--gold)}
+.q-back{margin-top:18px;background:none;border:0;color:var(--paper-faint);font-family:"JetBrains Mono",monospace;font-size:12px;cursor:pointer;letter-spacing:.08em}
+.q-back:hover{color:var(--gold)}
+@media(max-width:600px){ .q-text{font-size:19px} .q-card{padding:24px 18px} }
+/* ---- result card ---- */
+#testResult{max-width:900px;margin:28px auto 0}
+.res-wrap{display:flex;gap:34px;align-items:flex-start;flex-wrap:wrap}
+.tcard{width:340px;flex:none;margin:0 auto}
+.tcard-in{position:relative;border:1px solid var(--card-ac);border-top:4px solid var(--card-ac);background:var(--ink-2);padding:22px 22px 18px;overflow:hidden}
+.tcard-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tcard-ovr{display:flex;flex-direction:column;align-items:center;line-height:1;flex:none}
+.ovr-num{font-family:"Syne",sans-serif;font-weight:800;font-size:34px;color:var(--card-ac)}
+.ovr-lab{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.16em;color:var(--paper-faint);margin-top:3px}
+.tcard-emblem{width:66px;height:66px;color:var(--card-ac);flex:none}
+.tcard-emblem svg{width:100%;height:100%}
+.tcard-code{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.16em;color:var(--paper-dim);flex:none}
+.tcard-name{font-family:"Syne",sans-serif;font-weight:800;font-size:26px;color:var(--paper);margin:16px 0 4px;line-height:1.08}
+.tcard-ess{font-size:13px;color:var(--paper-dim);margin-bottom:16px;line-height:1.45}
+.tcard-stats{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:14px}
+.tstat{display:grid;grid-template-columns:82px 26px 1fr;align-items:center;gap:9px}
+.tstat span{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.06em;color:var(--paper-faint)}
+.tstat em{font-family:"Syne",sans-serif;font-weight:800;font-size:14px;color:var(--paper);text-align:right;font-style:normal}
+.tstat i{height:6px;background:var(--ink-3);display:block;overflow:hidden}
+.tstat i u{display:block;height:100%;text-decoration:none}
+.tcard-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.tcard-cols p{font-size:11.5px;color:var(--paper-dim);line-height:1.55;margin:4px 0 0}
+.tcard-foot{margin-top:16px;font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.14em;color:var(--paper-faint)}
+.res-side{flex:1;min-width:270px}
+.res-h{font-family:"Syne",sans-serif;font-weight:700;font-size:21px;color:var(--paper);margin:0 0 6px}
+.res-sly{border-left:2px solid var(--gold);padding:8px 0 8px 16px;color:var(--paper-dim);font-size:14px;line-height:1.5;margin:14px 0}
+.res-method{border:1px solid var(--line-strong);background:var(--ink-2);padding:16px 18px;margin-top:14px}
+.res-method h4{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--gold);margin:0 0 8px;text-transform:uppercase}
+.res-method p{font-size:13px;color:var(--paper-dim);line-height:1.55;margin:0 0 8px}
+.res-method code{display:block;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--paper);background:var(--ink-3);padding:10px 12px;line-height:1.5;border-left:2px solid var(--line-strong)}
+.res-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.res-btn{background:var(--gold);color:var(--ink);border:0;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:12px 18px;cursor:pointer;transition:.15s}
+.res-btn.ghost{background:transparent;border:1px solid var(--line-strong);color:var(--paper-dim)}
+.res-btn:hover{filter:brightness(1.08)}
+.res-btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+.res-second{font-size:13px;color:var(--paper-faint);margin-top:10px;line-height:1.5}
+.res-second b{color:var(--paper-dim)}
+@media(max-width:600px){ .testcta{display:none} #botbar{flex-direction:column} .bb-next,.bb-test{width:100%;text-align:center} }
 </style>
 </head>
 <body>
 
   <header class="masthead">
     <div class="mark">SAAHAS<b>.</b></div>
-    <span class="micro" style="color:var(--gold)">v2.6</span>
+    <div class="mast-right">
+      <button class="testcta" onclick="goMode('test')">&#9670; Where do you land</button>
+      <span class="micro" style="color:var(--gold)">v3.0</span>
+    </div>
   </header>
   <hr class="rule" style="max-width:1240px;margin:0 auto">
 
   <nav class="modebar">
     <div class="toggle" role="tablist" aria-label="View mode">
-      <button class="tg active" data-mode="field" role="tab">The Field</button>
-      <button class="tg" data-mode="world" role="tab">The World</button>
-      <button class="tg" data-mode="lineage" role="tab">The Roots</button>
+      <button class="tg active" data-mode="field" role="tab"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M8 1.5v13M1.5 8h13"/></svg>The Field</button>
+      <button class="tg" data-mode="world" role="tab"><svg viewBox="0 0 16 16" width="13" height="13"><circle cx="8" cy="8" r="6.3"/><path d="M1.7 8h12.6M8 1.7c2.8 2 2.8 10.6 0 12.6M8 1.7c-2.8 2-2.8 10.6 0 12.6"/></svg>The World</button>
+      <button class="tg" data-mode="lineage" role="tab"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M8 14.5V7M8 7 3.5 3M8 7l4.5-4"/><circle cx="8" cy="6" r="1.4"/><circle cx="3.5" cy="2.6" r="1.4"/><circle cx="12.5" cy="2.6" r="1.4"/></svg>The Roots</button>
+      <button class="tg" data-mode="test" role="tab"><svg viewBox="0 0 16 16" width="13" height="13"><circle cx="8" cy="8" r="6.3"/><circle cx="8" cy="8" r="2.4"/></svg>The Test</button>
     </div>
   </nav>
 
-  <div id="factbar">
+  <div id="factbar" onclick="nextFact()" title="Tap for another">
     <div class="fact-inner">
       <span class="fact-k mono">DID YOU KNOW</span>
       <p class="fact-t" id="factText"></p>
       <span class="fact-n mono" id="factNum"></span>
+      <span class="fact-cyc" aria-hidden="true">&#8635;</span>
     </div>
+    <div class="fact-prog"><i id="factProg"></i></div>
   </div>
 
   <div id="fieldMode">
@@ -407,6 +491,34 @@
     </main>
   </div>
 
+  <div id="testMode" style="display:none">
+    <main class="wrap">
+      <div id="testIntro">
+        <section class="hero">
+          <div class="kicker micro">A 50-question instrument</div>
+          <h1 class="head">Where do you actually stand?</h1>
+          <p class="hsub">Not what you call yourself. What you would give up when two good things collide. Fifty tradeoffs, rising in difficulty, no party names until the end.</p>
+          <button class="t-start" onclick="startTest()">Begin the test</button>
+          <p class="t-note">Around 8 minutes. Nothing is stored. You get a shareable card at the end.</p>
+        </section>
+        <section class="sec">
+          <div class="sec-head"><div><div class="micro" style="margin-bottom:6px">How it reads you</div><h2 class="sec-title">It measures values, not opinions</h2></div></div>
+          <p class="spec-note">Every answer quietly moves you along several hidden axes at once: market and state, liberty and order, equality and merit, nation and world, tradition and change, growth and ecology. Your pattern across all fifty is matched to the ideology whose shape it most resembles. There are no right answers, only revealed priorities.</p>
+        </section>
+      </div>
+      <div id="testStage" style="display:none">
+        <div class="q-bar"><div class="q-fill" id="qFill"></div></div>
+        <div class="q-meta"><span class="micro" id="qStage">Stage 1</span><span class="micro" id="qCount">01 / 50</span></div>
+        <div class="q-card">
+          <p class="q-text" id="qText"></p>
+          <div class="q-opts" id="qOpts"></div>
+        </div>
+        <button class="q-back" id="qBack" onclick="backQ()">&lsaquo; back</button>
+      </div>
+      <div id="testResult" style="display:none"></div>
+    </main>
+  </div>
+
   <footer class="wrap">
     <span class="micro">SAAHAS · field guide and atlas · base</span>
     <span class="micro" style="color:var(--paper-faint)">seeded · full fill is the next build</span>
@@ -420,6 +532,11 @@
       </div>
     </div>
   </footer>
+
+  <div id="botbar">
+    <button class="bb-next" id="bbNext" onclick="goNext()">See where they actually rule <span class="bb-ar">&rarr;</span></button>
+    <button class="bb-test" id="bbTest" onclick="goMode('test')">Take the test</button>
+  </div>
 
   <div class="scrim" id="scrim"></div>
   <aside class="panel" id="panel" aria-hidden="true"></aside>
@@ -974,8 +1091,13 @@ const specGrid=document.getElementById("spec");
 SPEC.forEach((s,i)=>{ const d=document.createElement("div");d.className="spec-item";d.innerHTML=`<span class="sn">${String(i+1).padStart(2,"0")}</span><span class="st">${s}</span>`;specGrid.appendChild(d); });
 
 /* ===== mode toggle ===== */
-const modes={field:document.getElementById("fieldMode"),world:document.getElementById("worldMode"),lineage:document.getElementById("lineageMode")};
-document.querySelectorAll(".tg").forEach(b=>b.addEventListener("click",()=>{ document.querySelectorAll(".tg").forEach(x=>x.classList.toggle("active",x===b)); const m=b.dataset.mode; Object.keys(modes).forEach(k=>{ if(modes[k]) modes[k].style.display=(k===m?"block":"none"); }); closePanel(); resetZoom(); closeCompare(); window.scrollTo(0,0); }));
+const modes={field:document.getElementById("fieldMode"),world:document.getElementById("worldMode"),lineage:document.getElementById("lineageMode"),test:document.getElementById("testMode")};
+const MODE_ORDER=["field","world","lineage","test"];
+const NEXT_PHRASE={field:"See where they actually rule",world:"Trace where they came from",lineage:"Find out where YOU stand",test:"Back to the field"};
+let curMode="field";
+function goMode(m){ if(!modes[m])return; curMode=m; document.querySelectorAll(".tg").forEach(x=>x.classList.toggle("active",x.dataset.mode===m)); Object.keys(modes).forEach(k=>{ if(modes[k]) modes[k].style.display=(k===m?"block":"none"); }); closePanel(); resetZoom(); closeCompare(); const bn=document.getElementById("bbNext"); if(bn) bn.innerHTML=NEXT_PHRASE[m]+' <span class="bb-ar">&rarr;</span>'; const bt=document.getElementById("bbTest"); if(bt) bt.style.display=(m==="test"?"none":""); window.scrollTo(0,0); }
+function goNext(){ const i=MODE_ORDER.indexOf(curMode); goMode(MODE_ORDER[(i+1)%MODE_ORDER.length]); }
+document.querySelectorAll(".tg").forEach(b=>b.addEventListener("click",()=>goMode(b.dataset.mode)));
 
 /* ===== zoom (reveal small neighbours) ===== */
 const VB=VIEWBOX.split(" ").map(Number);
@@ -1096,7 +1218,12 @@ const FACTS=[
 "Edmund Burke, called the father of conservatism, supported the American Revolution while opposing the French one."
 ];
 const factText=document.getElementById("factText"), factNum=document.getElementById("factNum");
-(function(){ if(!factText)return; const order=FACTS.map((_,i)=>i); for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];} let p=0; function show(){ const idx=order[p]; factText.style.opacity="0"; setTimeout(()=>{ factText.textContent=FACTS[idx]; if(factNum)factNum.textContent=String(idx+1).padStart(2,"0")+" / "+FACTS.length; factText.style.opacity="1"; },550); p=(p+1)%order.length; } show(); setInterval(show,8200); })();
+let _factOrder=[], _fp=0, _factTimer=null;
+function _factProg(){ const b=document.getElementById("factProg"); if(!b)return; b.style.animation="none"; void b.offsetWidth; b.style.animation="factprog 8.2s linear"; }
+function _factShow(){ if(!factText)return; const idx=_factOrder[_fp]; factText.style.opacity="0"; setTimeout(()=>{ factText.textContent=FACTS[idx]; if(factNum)factNum.textContent=String(idx+1).padStart(2,"0")+" / "+FACTS.length; factText.style.opacity="1"; _factProg(); },300); _fp=(_fp+1)%_factOrder.length; }
+function _factTime(){ clearInterval(_factTimer); _factTimer=setInterval(_factShow,8200); }
+function nextFact(){ _factShow(); _factTime(); }
+(function(){ if(!factText)return; _factOrder=FACTS.map((_,i)=>i); for(let i=_factOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[_factOrder[i],_factOrder[j]]=[_factOrder[j],_factOrder[i]];} _factShow(); _factTime(); const fb=document.getElementById("factbar"); if(fb){ fb.addEventListener("mouseenter",()=>{ clearInterval(_factTimer); const b=document.getElementById("factProg"); if(b)b.style.animationPlayState="paused"; }); fb.addEventListener("mouseleave",()=>{ _factTime(); const b=document.getElementById("factProg"); if(b)b.style.animationPlayState="running"; }); } })();
 
 /* ===== roots / lineage ===== */
 const LINEAGE=[
@@ -1143,9 +1270,184 @@ function openLineage(id){ const n=LINEAGE.find(z=>z.id===id); if(!n)return; pane
   panel.classList.add("on"); scrim.classList.add("on"); panel.setAttribute("aria-hidden","false"); panel.scrollTop=0;
 }
 
+/* ===================== THE TEST (latent-axis instrument) ===================== */
+/* Theory: ideology = an objective function. Each answer is a forced tradeoff that
+   nudges the taker along several hidden axes at once. The summed, normalized vector
+   is matched (cosine similarity) to ideology prototype vectors. Closest = result. */
+const AXES=["econ","auth","eq","trad","nat","sec","exp","env"];
+const STAGES=["Gut feel","Tradeoffs","Scarcity and institutions","Crisis","The hard line"];
+function stageOf(i){ return i<10?0:i<22?1:i<34?2:i<45?3:4; }
+
+const QUESTIONS=[
+ {q:"A new technology will make society far richer but widen the gap between top and bottom. Worth it?",o:[["Yes, growth lifts everyone in the end.",{econ:2,eq:-2}],["Only if the gains are shared.",{econ:-1,eq:2}],["No, inequality corrodes a society.",{econ:-2,eq:2}]]},
+ {q:"Two schools, one budget. Fund the struggling one or the high performer?",o:[["The struggling one. Lift the floor.",{eq:2,econ:-1}],["The high performer. Reward what works.",{eq:-2,exp:1}]]},
+ {q:"A tradition most people cherish has no rational basis. Keep it?",o:[["Yes, shared rituals hold us together.",{trad:2,nat:1}],["No, keep only what we can justify.",{trad:-2,exp:1}]]},
+ {q:"Who should decide a complex public-health rule?",o:[["Elected representatives, answerable to voters.",{exp:-2,auth:-1}],["Independent experts in the field.",{exp:2,auth:1}]]},
+ {q:"A factory pollutes a river but employs the whole town.",o:[["Shut it. The environment comes first.",{env:2,econ:-1}],["Keep it. Livelihoods come first.",{env:-2,econ:1}],["Force a cleanup even if some jobs go.",{env:1,auth:1}]]},
+ {q:"Borders: open or controlled?",o:[["Open. People should move freely.",{nat:-2,auth:-1}],["Controlled. A nation decides who enters.",{nat:2,auth:1}]]},
+ {q:"A company can fire anyone, anytime, no reason given. Fair?",o:[["Yes, free contracts cut both ways.",{econ:2,auth:-1}],["No, workers need protection.",{econ:-2,eq:1}]]},
+ {q:"Should the state actively promote one shared national culture?",o:[["Yes, a common identity binds a country.",{nat:2,trad:1}],["No, let many cultures flourish on their own.",{nat:-2,trad:-1}]]},
+ {q:"A harmless lifestyle offends the majority. Restrict it?",o:[["No, liberty includes the right to offend.",{auth:-2,sec:-1}],["Yes, social harmony matters.",{auth:1,trad:1}]]},
+ {q:"Cameras on every street would cut crime sharply. Install them?",o:[["No, privacy is worth some risk.",{sec:-2,auth:-1}],["Yes, safety is worth it.",{sec:2,auth:1}]]},
+ {q:"Raise taxes to fund universal healthcare, even if growth slows?",o:[["Yes, health is a right.",{econ:-2,eq:2}],["No, growth is what funds everything else.",{econ:2,eq:-1}]]},
+ {q:"A famine. The state can seize grain from rich farmers without paying, saving a million lives but destroying trust in property for good.",o:[["Seize it. Lives outweigh property.",{econ:-2,eq:1,auth:1}],["Compensate them, then redistribute.",{econ:-1,eq:1}],["Respect ownership and find another way.",{econ:2,auth:-1}]]},
+ {q:"Free speech for a party that openly wants to end free speech?",o:[["Yes, the principle has to hold.",{auth:-2,sec:-1}],["No tolerance for the intolerant.",{auth:1,sec:1}]]},
+ {q:"One ventilator, two patients: 25 and 80. Decide how?",o:[["By years of life ahead.",{exp:1,eq:-1}],["A coin toss. Equal worth.",{eq:2}],["By who contributes more to society.",{eq:-2,exp:1}]]},
+ {q:"A populist wins a fair election, then moves to weaken the courts. Stop him?",o:[["No, the people chose.",{exp:-2,auth:-1}],["Yes, institutions must be protected.",{exp:1,auth:1}]]},
+ {q:"Guarantee everyone a basic income, including those who choose not to work?",o:[["Yes, a dignity floor for all.",{econ:-2,eq:2}],["No, support should require effort.",{econ:1,eq:-2}]]},
+ {q:"A private firm runs water cheaper and better than the state. Privatize it?",o:[["Yes, efficiency serves people.",{econ:2,exp:1}],["No, essentials should not chase profit.",{econ:-2}]]},
+ {q:"Your country can grow rich on trade that props up a dictatorship abroad.",o:[["Take the deal. Prosperity at home first.",{nat:1,econ:1}],["Refuse. Principles cross borders.",{nat:-2}]]},
+ {q:"Mandatory national service for every young person?",o:[["Yes, a duty owed to the collective.",{auth:2,nat:1}],["No, nobody owns your years.",{auth:-2}]]},
+ {q:"A celebrated novel is full of slurs. Pull it from schools?",o:[["No, confront ideas, do not hide them.",{trad:-1,auth:-2}],["Yes, protect students from harm.",{sec:1,auth:1}]]},
+ {q:"Pay the brilliant surgeon ten times the nurse?",o:[["Yes, skill and stakes justify it.",{eq:-2,econ:1}],["No, all essential work deserves dignity.",{eq:2,econ:-1}]]},
+ {q:"A wealthy region wants to stop subsidizing a poor one. Allow it?",o:[["Yes, let regions keep what they earn.",{econ:1,eq:-2,nat:-1}],["No, solidarity across the whole country.",{eq:2,nat:1}]]},
+ {q:"Who should care for the old: families or the state?",o:[["Families and communities.",{econ:1,trad:1,auth:-1}],["A public system for everyone.",{econ:-2,eq:1}]]},
+ {q:"A drug could end addiction, but only by forcing treatment on addicts.",o:[["No, the body is your own.",{auth:-2,sec:-1}],["Yes, save them from themselves.",{auth:2,sec:1}]]},
+ {q:"Two equally poor people: one from bad luck, one from gambling. Help them equally?",o:[["Yes, need is need.",{eq:2}],["No, choices carry consequences.",{eq:-2,trad:1}]]},
+ {q:"A crisis demands speed. Rule by decree for six months?",o:[["No, slow democracy still beats fast rule.",{auth:-2,exp:-1}],["Yes, sometimes speed saves lives.",{auth:2,exp:1}]]},
+ {q:"Tax polluting industries heavily, even if prices rise for the poor?",o:[["Yes, the planet cannot wait.",{env:2,econ:-1}],["No, do not punish ordinary people.",{env:-1,econ:1,eq:1}]]},
+ {q:"A minority group wants legal protection for its customs.",o:[["Grant it. Protect difference.",{nat:-1,eq:1,trad:-1}],["Refuse. One law for everyone.",{nat:1,auth:1}]]},
+ {q:"Let citizens vote directly on every major law by app?",o:[["Yes, pure democracy.",{exp:-2,auth:-1}],["No, complex choices need expertise.",{exp:2}]]},
+ {q:"A factory town dies as the world moves on. The state should...",o:[["Retrain and support the workers.",{econ:-1,eq:1}],["Let the market move them elsewhere.",{econ:2,eq:-1}]]},
+ {q:"Ban extremely violent media to lower real violence?",o:[["No, adults choose their own input.",{auth:-2,sec:-1}],["Yes, culture shapes behavior.",{auth:1,trad:1,sec:1}]]},
+ {q:"Tax large inheritances heavily, so each generation starts fresher?",o:[["Yes, no dynasties of wealth.",{eq:2,econ:-1}],["No, you may pass on what you built.",{eq:-2,econ:1,trad:1}]]},
+ {q:"A foreign investor offers huge money if labor laws are relaxed.",o:[["Accept. Jobs now beat rules.",{econ:2,eq:-1}],["Refuse. Protections are not for sale.",{econ:-2,eq:1}]]},
+ {q:"Should the state fund religion as part of the nation's heritage?",o:[["Yes, faith is part of who we are.",{trad:2,nat:1}],["No, the state stays secular.",{trad:-2,nat:-1}]]},
+ {q:"A pandemic. Lock everyone home for a year, crushing the economy, to save lives?",o:[["Yes, lives first, rebuild later.",{sec:2,auth:1,econ:-1}],["No, the cure cannot be worse than the disease.",{sec:-2,econ:1,auth:-1}]]},
+ {q:"To break a terror plot, surveil an entire community without warrants?",o:[["No, collective suspicion is wrong.",{sec:-2,auth:-1,eq:1}],["Yes, security outweighs the intrusion.",{sec:2,auth:1,nat:1}]]},
+ {q:"A scarce vaccine. Give it first to...",o:[["The most vulnerable.",{eq:2}],["Workers who keep society running.",{exp:1,eq:-1}],["A lottery. Everyone equal.",{eq:1,auth:-1}]]},
+ {q:"Your nation could take a million refugees, straining services but saving lives.",o:[["Open the doors. Humanity over borders.",{nat:-2,eq:1}],["Hold back. Look after our own first.",{nat:2,sec:1}]]},
+ {q:"A peaceful protest blocks a city for weeks. The state should...",o:[["Protect it. Disruption is the point.",{auth:-2}],["Clear the streets. Order matters.",{auth:2,sec:1}]]},
+ {q:"Automation can replace half of all jobs. Society should...",o:[["Slow it to protect workers.",{econ:-1,trad:1,eq:1}],["Embrace it and share the wealth.",{econ:-1,eq:2}],["Let it run. New jobs will appear.",{econ:2,eq:-1}]]},
+ {q:"To fight climate change, accept a permanent drop in your own living standard?",o:[["Yes, the future matters more.",{env:2,econ:-1}],["No, not unless others do too.",{env:-1,nat:1}],["Only under global, enforced rules.",{env:1,exp:1,nat:-1}]]},
+ {q:"The majority votes to strip a small group of a basic right. Honor the vote?",o:[["No, rights override majorities.",{auth:-1,eq:1,exp:1}],["Yes, the majority rules.",{auth:1,nat:1,exp:-1}]]},
+ {q:"A wise dictator would govern better than your messy democracy. Accept him?",o:[["No, self-rule beats good rule.",{auth:-2,exp:-1}],["Yes, outcomes are what matter.",{auth:2,exp:1}]]},
+ {q:"A truth, if revealed, would set off deadly riots. The government should...",o:[["Tell the truth regardless.",{auth:-1,exp:-1}],["Withhold it to keep the peace.",{auth:2,sec:1}]]},
+ {q:"Answer a brutal crime with...",o:[["Long rehabilitation aimed at return.",{auth:-1,eq:1}],["Harsh, certain punishment.",{auth:2,trad:1,sec:1}]]},
+ {q:"Suspend elections for five years, if that were the only way to stop a civil war?",o:[["No, that is the line you never cross.",{auth:-2,exp:-1}],["Yes, survival first, vote later.",{auth:2,sec:1}]]},
+ {q:"Break the constitution once to secure democracy permanently?",o:[["No, the means become the new system.",{auth:-1,trad:1}],["Yes, one break to save the whole.",{auth:1,exp:1}]]},
+ {q:"Build a perfectly equal society if it took one generation of force?",o:[["No, no utopia is worth the coercion.",{econ:1,auth:-2,eq:-1}],["Yes, a hard road to a fair end.",{econ:-2,eq:2,auth:2}]]},
+ {q:"A machine could plan the economy flawlessly, with no human vote. Hand it the keys?",o:[["No, freedom to choose beats a perfect plan.",{econ:1,auth:-2,exp:-1}],["Yes, competence over chaos.",{econ:-1,exp:2,auth:1}]]},
+ {q:"If your own side won total power, would you let the opposition keep its rights?",o:[["Always. Power must be checked.",{auth:-2,eq:1}],["Only if they would do the same.",{auth:1,sec:1}],["No. Secure the win.",{auth:2,nat:1,sec:1}]]}
+];
+
+/* prototype vectors per ideology, each axis in [-1,1] */
+const ARCH={
+ liberalism:{econ:.45,auth:-.55,eq:-.05,trad:-.35,nat:-.40,sec:-.40,exp:.05,env:-.05},
+ conservatism:{econ:.45,auth:.40,eq:-.35,trad:.80,nat:.45,sec:.45,exp:-.05,env:-.20},
+ socialdemocracy:{econ:-.45,auth:-.25,eq:.70,trad:-.20,nat:-.30,sec:-.15,exp:.15,env:.35},
+ socialism:{econ:-.80,auth:-.10,eq:.85,trad:-.25,nat:-.35,sec:-.10,exp:.05,env:.35},
+ communism:{econ:-.95,auth:.75,eq:.95,trad:-.30,nat:-.55,sec:.55,exp:.20,env:.05},
+ libertarianism:{econ:.95,auth:-.90,eq:-.55,trad:-.20,nat:-.25,sec:-.85,exp:-.10,env:-.45},
+ anarchism:{econ:-.45,auth:-.98,eq:.70,trad:-.40,nat:-.55,sec:-.85,exp:-.30,env:.45},
+ nationalism:{econ:.10,auth:.60,eq:-.20,trad:.65,nat:.95,sec:.60,exp:-.10,env:-.25},
+ fascism:{econ:.15,auth:.98,eq:-.55,trad:.55,nat:.95,sec:.90,exp:.05,env:-.25},
+ progressivism:{econ:-.35,auth:-.45,eq:.55,trad:-.85,nat:-.55,sec:-.30,exp:.25,env:.55},
+ environmentalism:{econ:-.35,auth:-.10,eq:.40,trad:-.40,nat:-.55,sec:-.10,exp:.30,env:.98},
+ christiandemocracy:{econ:.15,auth:.20,eq:.15,trad:.70,nat:.30,sec:.25,exp:.00,env:.10}
+};
+
+const RESULT={
+ liberalism:{name:"Liberalism",code:"LIB",color:"#d6a93c",ess:"Liberty, rights, and the individual under a limited state.",thinkers:["John Locke","J.S. Mill","Isaiah Berlin","John Rawls"],books:["On Liberty, Mill","A Theory of Justice, Rawls","Two Treatises of Government, Locke"],sly:"You trust the individual so completely that you sometimes forget the crowd they have to live in."},
+ conservatism:{name:"Conservatism",code:"CON",color:"#bd8b3a",ess:"Order, tradition, and change by inches.",thinkers:["Edmund Burke","Michael Oakeshott","Roger Scruton"],books:["Reflections on the Revolution in France, Burke","The Conservative Mind, Kirk","How to Be a Conservative, Scruton"],sly:"You guard the inheritance so carefully that you can forget to ask whether the heirs are starving."},
+ socialdemocracy:{name:"Social Democracy",code:"SDM",color:"#c0508a",ess:"A market economy tamed by a strong welfare state.",thinkers:["Eduard Bernstein","Tony Judt","J.M. Keynes"],books:["Ill Fares the Land, Judt","The General Theory, Keynes","Evolutionary Socialism, Bernstein"],sly:"You want the engine of capitalism and the conscience of socialism, and quietly hope nobody hands you the bill for both."},
+ socialism:{name:"Socialism",code:"SOC",color:"#d23b3b",ess:"Shared ownership against class division.",thinkers:["Rosa Luxemburg","G.A. Cohen","Karl Marx"],books:["Why Not Socialism?, Cohen","The Communist Manifesto, Marx and Engels","Reform or Revolution, Luxemburg"],sly:"You see the system so clearly that you sometimes skip the question of who runs the better one."},
+ communism:{name:"Communism",code:"COM",color:"#aa1f1f",ess:"A classless, stateless equality, sought through the state.",thinkers:["Karl Marx","Antonio Gramsci","V.I. Lenin"],books:["Das Kapital, Marx","State and Revolution, Lenin","Prison Notebooks, Gramsci"],sly:"You aim for a world with no rulers by first building the most powerful ruler that has ever existed."},
+ libertarianism:{name:"Libertarianism",code:"LBT",color:"#e0b84a",ess:"Maximum liberty, minimum coercion.",thinkers:["Robert Nozick","Friedrich Hayek","Milton Friedman"],books:["Anarchy, State, and Utopia, Nozick","The Road to Serfdom, Hayek","Capitalism and Freedom, Friedman"],sly:"You would abolish the state to be free, then meet the private powers that rush in to fill the space."},
+ anarchism:{name:"Anarchism",code:"ANA",color:"#9aa0a8",ess:"Order without rulers.",thinkers:["Peter Kropotkin","Emma Goldman","Mikhail Bakunin"],books:["The Conquest of Bread, Kropotkin","Mutual Aid, Kropotkin","God and the State, Bakunin"],sly:"You trust people to govern themselves, which is either the bravest bet in politics or the most hopeful."},
+ nationalism:{name:"Nationalism",code:"NAT",color:"#b58a3a",ess:"The nation as the unit of loyalty and politics.",thinkers:["Johann Herder","Giuseppe Mazzini","Anthony D. Smith"],books:["Imagined Communities, Anderson","Nations and Nationalism, Gellner","The Duties of Man, Mazzini"],sly:"You found belonging in the nation, and with it a line marking everyone who does not belong."},
+ fascism:{name:"Fascism",code:"FSC",color:"#7f8389",ess:"Unity, hierarchy, and strength imposed by force.",thinkers:["Robert Paxton","Hannah Arendt","Umberto Eco"],books:["The Anatomy of Fascism, Paxton","The Origins of Totalitarianism, Arendt","Ur-Fascism, Eco"],sly:"If the test put you here, read the historians, not the manifestos. This is the one result the last century already graded."},
+ progressivism:{name:"Progressivism",code:"PRG",color:"#3aa6a0",ess:"Reform, evidence, and rights that widen over time.",thinkers:["John Dewey","Jane Addams","Amartya Sen"],books:["Democracy and Education, Dewey","The Idea of Justice, Sen","Twenty Years at Hull-House, Addams"],sly:"You are sure tomorrow can beat today, which is lovely, right up until someone asks who funds the experiment."},
+ environmentalism:{name:"Environmentalism",code:"GRN",color:"#3f9a4e",ess:"Ecological limits placed at the center of politics.",thinkers:["Rachel Carson","Murray Bookchin","Arne Naess"],books:["Silent Spring, Carson","This Changes Everything, Klein","Small Is Beautiful, Schumacher"],sly:"You would save the planet for people by asking people to want a little less, which is the hardest sell ever written."},
+ christiandemocracy:{name:"Christian Democracy",code:"CDM",color:"#9a7b3e",ess:"Christian social ethics meeting a democratic market.",thinkers:["Jacques Maritain","Pope Leo XIII","Konrad Adenauer"],books:["Rerum Novarum, Leo XIII","Integral Humanism, Maritain","Caritas in Veritate, Benedict XVI"],sly:"You want the warmth of faith and the fairness of the market to agree, and mostly hope no one audits the overlap."}
+};
+
+const EMBLEM={
+ liberalism:'<svg viewBox="0 0 100 100"><path d="M50 16c9 15 19 22 19 39a19 19 0 0 1-38 0c0-9 5-15 9-21 2 8 8 9 8 16 0 0 6-4 6-14 0-8-8-15-4-20z" fill="currentColor"/></svg>',
+ conservatism:'<svg viewBox="0 0 100 100"><rect x="28" y="24" width="44" height="8" fill="currentColor"/><rect x="38" y="34" width="7" height="40" fill="currentColor"/><rect x="55" y="34" width="7" height="40" fill="currentColor"/><rect x="26" y="74" width="48" height="8" fill="currentColor"/></svg>',
+ socialdemocracy:'<svg viewBox="0 0 100 100"><path d="M50 38c-7-13-27-9-27 6 0 13 17 19 27 30 10-11 27-17 27-30 0-15-20-19-27-6z" fill="currentColor"/><rect x="48" y="58" width="4" height="24" fill="currentColor"/></svg>',
+ socialism:'<svg viewBox="0 0 100 100"><circle cx="50" cy="60" r="15" fill="currentColor"/><g stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M50 30v-8M30 42l-6-6M70 42l6-6M24 60h-6M82 60h-6"/></g><path d="M22 78h56" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>',
+ communism:'<svg viewBox="0 0 100 100"><path d="M50 18l9 27h28l-23 17 9 27-23-17-23 17 9-27-23-17h28z" fill="currentColor"/></svg>',
+ libertarianism:'<svg viewBox="0 0 100 100"><g stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M50 50V20M50 20l-8 8M50 20l8 8M50 50v30M50 80l-8-8M50 80l8-8M50 50H20M20 50l8-8M20 50l8 8M50 50h30M80 50l-8-8M80 50l-8 8"/></g></svg>',
+ anarchism:'<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="26" fill="none" stroke="currentColor" stroke-width="8" stroke-dasharray="118 45" transform="rotate(20 50 50)"/></svg>',
+ nationalism:'<svg viewBox="0 0 100 100"><rect x="30" y="18" width="5" height="64" fill="currentColor"/><path d="M35 22h34l-8 11 8 11H35z" fill="currentColor"/></svg>',
+ fascism:'<svg viewBox="0 0 100 100"><rect x="24" y="24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="6"/><path d="M36 40h28L50 64z" fill="currentColor"/></svg>',
+ progressivism:'<svg viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M28 58l22-20 22 20M28 74l22-20 22 20"/></g></svg>',
+ environmentalism:'<svg viewBox="0 0 100 100"><path d="M70 24C40 26 26 44 26 64c0 5 1 9 3 12 0-22 16-36 38-44-14 12-22 22-26 38 22 2 41-12 41-38 0-3 0-5-12-8z" fill="currentColor"/></svg>',
+ christiandemocracy:'<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="26" fill="none" stroke="currentColor" stroke-width="6"/><rect x="46" y="34" width="8" height="32" fill="currentColor"/><rect x="38" y="44" width="24" height="8" fill="currentColor"/></svg>'
+};
+
+const AXIS_MAX={}; AXES.forEach(a=>AXIS_MAX[a]=0);
+QUESTIONS.forEach(q=>{ AXES.forEach(a=>{ let mx=0; q.o.forEach(o=>{ const w=o[1][a]; if(w!==undefined&&Math.abs(w)>mx)mx=Math.abs(w); }); AXIS_MAX[a]+=mx; }); });
+const QN=QUESTIONS.length;
+let tState={i:0,picks:{}};
+
+function startTest(){ tState={i:0,picks:{}}; document.getElementById("testIntro").style.display="none"; document.getElementById("testResult").style.display="none"; document.getElementById("testStage").style.display="block"; renderQ(0); window.scrollTo(0,0); }
+function renderQ(i){ tState.i=i; const q=QUESTIONS[i];
+ document.getElementById("qFill").style.width=(i/(QN-1)*100)+"%";
+ document.getElementById("qStage").textContent="Stage "+(stageOf(i)+1)+" · "+STAGES[stageOf(i)];
+ document.getElementById("qCount").textContent=String(i+1).padStart(2,"0")+" / "+QN;
+ document.getElementById("qText").textContent=q.q;
+ const box=document.getElementById("qOpts"); box.innerHTML="";
+ q.o.forEach((o,oi)=>{ const b=document.createElement("button"); b.className="q-opt"+(tState.picks[i]===oi?" sel":""); b.textContent=o[0]; b.addEventListener("click",()=>pick(i,oi,b)); box.appendChild(b); });
+ document.getElementById("qBack").style.visibility=i===0?"hidden":"visible";
+}
+function pick(i,oi,btn){ tState.picks[i]=oi; document.querySelectorAll("#qOpts .q-opt").forEach(x=>x.classList.remove("sel")); btn.classList.add("sel");
+ setTimeout(()=>{ if(i+1>=QN) computeResult(); else renderQ(i+1); },190); }
+function backQ(){ if(tState.i>0) renderQ(tState.i-1); }
+
+function computeResult(){
+ const raw={}; AXES.forEach(a=>raw[a]=0);
+ for(const k in tState.picks){ const w=QUESTIONS[k].o[tState.picks[k]][1]; for(const a in w) raw[a]+=w[a]; }
+ const u={}; AXES.forEach(a=>{ const m=AXIS_MAX[a]||1; u[a]=Math.max(-1,Math.min(1, raw[a]/m)); });
+ const scored=Object.keys(ARCH).map(id=>({id,cos:cosine(u,ARCH[id])})).sort((x,y)=>y.cos-x.cos);
+ const top=scored[0], second=scored[1];
+ const conf=Math.max(55,Math.min(99,Math.round(50+top.cos*49)));
+ renderCard(top.id,conf,u,second.id);
+ document.getElementById("testStage").style.display="none";
+ const r=document.getElementById("testResult"); r.style.display="block"; window.scrollTo(0,0);
+}
+function cosine(u,p){ let d=0,nu=0,np=0; AXES.forEach(a=>{ d+=u[a]*p[a]; nu+=u[a]*u[a]; np+=p[a]*p[a]; }); return d/((Math.sqrt(nu)*Math.sqrt(np))||1); }
+
+function statVal(u,axis,dir){ return Math.max(2,Math.min(99,Math.round(((u[axis]*dir)+1)/2*99))); }
+function renderCard(id,conf,u,secondId){
+ const R=RESULT[id];
+ const stats=[["MARKET","econ",1],["EQUALITY","eq",1],["LIBERTY","auth",-1],["TRADITION","trad",1],["NATION","nat",1],["ECOLOGY","env",1]];
+ const statHtml=stats.map(s=>{const v=statVal(u,s[1],s[2]);return `<div class="tstat"><span>${s[0]}</span><em>${v}</em><i><u style="width:${v}%;background:${R.color}"></u></i></div>`;}).join("");
+ const card=`<div class="tcard" id="tcard" style="--card-ac:${R.color}"><div class="tcard-in">
+   <div class="tcard-head"><div class="tcard-ovr"><span class="ovr-num">${conf}</span><span class="ovr-lab">MATCH</span></div><div class="tcard-emblem">${EMBLEM[id]||""}</div><div class="tcard-code">${R.code}</div></div>
+   <div class="tcard-name">${R.name}</div>
+   <div class="tcard-ess">${R.ess}</div>
+   <div class="tcard-stats">${statHtml}</div>
+   <div class="tcard-cols"><div><span class="micro">Thinkers</span><p>${R.thinkers.join("<br>")}</p></div><div><span class="micro">Reading</span><p>${R.books.join("<br>")}</p></div></div>
+   <div class="tcard-foot">SAAHAS · POLITICAL ATLAS · simrankisuno.xyz</div>
+ </div></div>`;
+ const sec=RESULT[secondId];
+ const side=`<div class="res-side">
+   <div class="micro" style="color:var(--gold);margin-bottom:8px">Your closest match</div>
+   <h3 class="res-h">You lean ${R.name}.</h3>
+   <div class="res-second">Runner-up: <b>${sec.name}</b>. Most people are a blend, not a label.</div>
+   <div class="res-sly">${R.sly}</div>
+   <div class="res-method"><h4>Find the candidate who actually fits</h4>
+     <p>Do not trust the label on the poster. Take a politician's real manifesto or speeches, paste them into any LLM, and ask:</p>
+     <p><code>Score this manifesto on these axes, each from -1 to +1: market vs state, liberty vs authority, equality vs merit, tradition vs change, nation vs world, growth vs ecology. Then name the ideology it most resembles.</code></p>
+     <p>Compare its scores to yours above. The closest one earns your vote, not the loudest one.</p>
+   </div>
+   <div class="res-btns">
+     <button class="res-btn" onclick="downloadCard()">Download card</button>
+     <button class="res-btn ghost" onclick="openIdeology('${id}')">Read the full profile</button>
+     <button class="res-btn ghost" onclick="startTest()">Retake</button>
+   </div>
+ </div>`;
+ document.getElementById("testResult").innerHTML=`<div class="res-wrap">${card}${side}</div>`;
+}
+function downloadCard(){ const node=document.getElementById("tcard"); if(typeof html2canvas==="undefined"){ alert("Screenshot the card to share it."); return; } html2canvas(node,{backgroundColor:"#0a0d12",scale:2,useCORS:true}).then(c=>{ const a=document.createElement("a"); a.download="my-ideology-saahas.png"; a.href=c.toDataURL("image/png"); a.click(); }).catch(()=>alert("Screenshot the card to share it.")); }
+
+
 /* init */
 paint(2026);
 buildLineage();
 </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </body>
 </html>
